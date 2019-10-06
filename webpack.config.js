@@ -1,7 +1,11 @@
+const _ = require('lodash');
 const Path = require('path');
+const fs = require('fs');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -23,20 +27,22 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
+        options: {
+          partialDirs: Path.resolve(__dirname, 'src', 'partials'),
+        },
       },
       {
         test: /\.css$/,
         use: [
           'style-loader',
           {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
             loader: 'css-loader',
-            options: { importLoaders: 1 }
+            options: { importLoaders: 1 },
           },
           {
             loader: 'postcss-loader',
@@ -53,20 +59,45 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        from: Path.resolve(__dirname, 'src', 'static'),
-        to: '.',
-      },
-    ]),
-    new HtmlWebpackPlugin({
-      title: 'Lunar Foundation',
-    }),
-  ],
+  plugins: _
+    ([
+      new CleanWebpackPlugin(),
+      new CopyPlugin([
+        {
+          from: Path.resolve(__dirname, 'src', 'static'),
+          to: '.',
+        },
+      ]),
+      new MiniCssExtractPlugin({
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].css',
+        ignoreOrder: false,
+      }),
+    ])
+    .concat(_
+      (fs.readdirSync(Path.resolve(__dirname, 'src', 'pages')))
+      .map(
+        (filename) => {
+          const parsed = filename.split('.');
+
+          if (parsed.length <= 1) {
+            return null;
+          }
+
+          return new HtmlWebpackPlugin({
+            title: 'Lunar Foundation',
+            filename: parsed[0] === 'index' ? 'index.html' : `${parsed[0]}/index.html`,
+            template: `src/pages/${filename}`,
+          });
+        }
+      )
+      .compact()
+      .value()
+    )
+    .value(),
 
   optimization: {
     minimize: true,
+    minimizer: [new TerserPlugin()]
   },
 };
