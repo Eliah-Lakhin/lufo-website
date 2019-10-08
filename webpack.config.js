@@ -28,13 +28,31 @@ module.exports = {
       },
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader',
-        options: {
-          partialDirs: Path.resolve(__dirname, 'src', 'partials'),
-        },
+        use: [
+          {
+            loader: 'handlebars-loader',
+            options: {
+              helperDirs: Path.resolve(__dirname, 'src', 'helpers'),
+              partialDirs: Path.resolve(__dirname, 'src', 'partials'),
+              inlineRequires: /\.md$/,
+            },
+          },
+        ],
       },
       {
-        test: /\.css$/,
+        test: /\.md$/,
+        use: [
+          'html-loader',
+          {
+            loader: 'markdown-loader',
+            options: {
+              gfm: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
         use: [
           'style-loader',
           {
@@ -44,6 +62,7 @@ module.exports = {
             loader: 'css-loader',
             options: { importLoaders: 1 },
           },
+          'sass-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -54,7 +73,7 @@ module.exports = {
               ],
             },
           },
-        ]
+        ],
       },
     ],
   },

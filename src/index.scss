@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+
+.active-nav-item {
+  @apply bg-green-600 text-gray-900 font-bold;
+}
+
+.markdown {
+  h1, h2, h3 {
+    @apply font-header text-green-400;
+  }
+
+  h1 {
+    @apply text-2xl mt-6 mb-1;
+  }
+
+  h2 {
+    @apply text-lg mt-4 mb-1;
+  }
+
+  h3 {
+    @apply mt-4 mb-1;
+  }
+
+  p, ul, ol, pre {
+    @apply m-3;
+  }
+
+  pre {
+    @apply bg-gray-300 text-gray-900 p-2;
+  }
+}
+
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Lato&display=swap');

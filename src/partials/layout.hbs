@@ -2,9 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{htmlWebpackPlugin.options.title}}</title>
+    <title>Lunar Foundation</title>
   </head>
-  <body>
-    {{> @partial-block }}
+  <body class="bg-lufo-body font-paragraph">
+    {{> header}}
+    <div class="container mx-auto bg-gray-900 mt-6 mb-6">
+      {{> @partial-block }}
+    </div>
+    {{> footer}}
   </body>
 </html>
