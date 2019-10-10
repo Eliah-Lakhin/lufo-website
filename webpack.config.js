@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const marked = require("marked");
 
 module.exports = {
   entry: {
@@ -47,6 +48,7 @@ module.exports = {
             loader: 'markdown-loader',
             options: {
               gfm: true,
+              renderer: new marked.Renderer(),
             },
           },
         ],

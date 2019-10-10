@@ -8,8 +8,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        'header': ['Cinzel Decorative', 'cursive'],
-        'paragraph': ['Lato', 'sans-serif'],
+        'title': ['Cinzel Decorative', 'cursive'],
+        'item': ['Lato', 'sans-serif'],
+        'header': ['Playfair Display', 'serif'],
+        'regular': ['Roboto', 'sans-serif'],
       },
     },
   },

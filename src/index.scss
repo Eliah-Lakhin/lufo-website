@@ -11,7 +11,7 @@
   }
 
   h1 {
-    @apply text-2xl mt-6 mb-1;
+    @apply text-4xl mt-6 mb-1;
   }
 
   h2 {
@@ -23,7 +23,15 @@
   }
 
   p, ul, ol, pre {
-    @apply m-3;
+    @apply my-3;
+  }
+
+  ul {
+    @apply list-disc ml-8;
+  }
+
+  ol {
+    @apply list-decimal ml-8;
   }
 
   pre {
@@ -33,4 +41,4 @@
 
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Lato|Playfair+Display|Roboto&display=swap');
