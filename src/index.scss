@@ -16,6 +16,8 @@
 }
 
 .markdown {
+  @apply mb-32;
+
   h1, h2, h3 {
     @apply font-header text-green-400;
   }
@@ -50,6 +52,10 @@
 
   a {
     @apply text-green-200 underline;
+  }
+
+  img {
+    @apply block mx-auto my-8;
   }
 }
 
