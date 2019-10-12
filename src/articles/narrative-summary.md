@@ -8,5 +8,3 @@ The core narrative of the plot and game mechanics under the hood aims to present
 4. Human talant and genius is independent from one's origins and social status. A genius person can be born in ordinary family.
 5. The Faith in High goal is a key to unite people. Even if the High goal is internally artifficial.
 6. Knowledge is a tool in right hands and a weapon in wrong hands.
-7. Mankind is naturally divided into smart and fool. Fools will fight to elevate their personal ego eventually destroying entire society. Smarts will develop for the common good and high goals of humanity.
-8. For smarts to outperform fools they have to be united and defensive, but still be able to fight back using their knowledge to gain advantage, and be ready to make difficult decisions at some points of life.

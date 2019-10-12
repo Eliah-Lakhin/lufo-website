@@ -1,8 +1,18 @@
 @tailwind base;
 @tailwind components;
 
-.active-nav-item {
-  @apply bg-green-600 text-gray-900 font-bold;
+.lufo-navbar-items {
+  li {
+    @apply list-none font-item;
+
+    &.active-nav-item {
+      @apply bg-green-600 text-gray-900;
+    
+      a {
+        @apply no-underline;
+      }
+    }
+  }
 }
 
 .markdown {
