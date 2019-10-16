@@ -7,7 +7,10 @@ new Gumshoe('nav a', {
   navClass: 'active-nav-item'
 });
 
-new SmoothScroll('a[href*="#"]');
+new SmoothScroll('a[href*="#"]', {
+	speed: 1000,
+	speedAsDuration: true
+});
 
 stickybits('nav', {
   stickyBitStickyOffset: 50,
