@@ -8,7 +8,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const marked = require("marked");
 
+const mode = process.env.NODE_ENV;
+const production = mode === 'production';
+
 module.exports = {
+  mode,
+
   entry: {
     lufo: Path.resolve(__dirname, 'src', 'index.js'),
   },
@@ -85,23 +90,20 @@ module.exports = {
     ],
   },
 
-  plugins: _
-    ([
-      new CleanWebpackPlugin(),
-      new CopyPlugin([
-        {
-          from: Path.resolve(__dirname, 'src', 'static'),
-          to: '.',
-        },
-      ]),
-      new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].css',
-        ignoreOrder: false,
-      }),
-    ])
-    .concat(_
-      (fs.readdirSync(Path.resolve(__dirname, 'src', 'pages')))
+  plugins: [
+    ...production ? [new CleanWebpackPlugin()] : [],
+    new CopyPlugin([
+      {
+        from: Path.resolve(__dirname, 'src', 'static'),
+        to: '.',
+      },
+    ]),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false,
+    }),
+    ..._(fs.readdirSync(Path.resolve(__dirname, 'src', 'pages')))
       .map(
         (filename) => {
           const parsed = filename.split('.');
@@ -119,8 +121,7 @@ module.exports = {
       )
       .compact()
       .value()
-    )
-    .value(),
+  ],
 
   optimization: {
     minimize: true,
