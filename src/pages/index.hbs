@@ -3,29 +3,31 @@
     <div class="px-4 py-8 flex-none">
       <nav>
         <ul class="lufo-navbar-items">
-          <li class="mb-1">
-            <a class="px-4 py-2 block underline" href="#introduction">Introduction</a>
+          <li>
+            <a href="#introduction">Introduction</a>
           </li>
-          <li class="mb-1">
-            <a class="px-4 py-2 block underline" href="#plot">Plot and Setting</a>
+          <li>
+            <a href="#plot-and-setting">Plot and Setting</a>
+            <ul>
+              <li><a href="#backstory">Backstory</a></li>
+              <li><a href="#the-island">The Island</a></li>
+              <li><a href="#alexander-ziolkowski">Alexander Ziolkowski</a></li>
+              <li><a href="#foundations-society">Foundation's Society</a></li>
+            </ul>
           </li>
-          <li class="mb-1">
-            <a class="px-4 py-2 block underline" href="#narrative-summary">Narrative Summary</a>
+          <li>
+            <a href="#narrative-summary">Narrative Summary</a>
           </li>
         </ul>
       </nav>
     </div>
 
     <main class="px-8 pt-3 pb-8">
-      <div id="introduction">
-        {{{[md] "../articles/introduction.md"}}}
-      </div>
-      <div id="plot">
-        {{{[md] "../articles/plot.md"}}}
-      </div>
-      <div id="narrative-summary">
-        {{{[md] "../articles/narrative-summary.md"}}}
-      </div>
+      {{{[md] "../articles/introduction.md"}}}
+
+      {{{[md] "../articles/plot.md"}}}
+      
+      {{{[md] "../articles/narrative-summary.md"}}}
     </main>
   </div>
 {{/layout}}

@@ -4,12 +4,12 @@ import SmoothScroll from 'smooth-scroll';
 import stickybits from 'stickybits';
 
 new Gumshoe('nav a', {
-  navClass: 'active-nav-item'
+  nested: true,
 });
 
 new SmoothScroll('a[href*="#"]', {
-	speed: 1000,
-	speedAsDuration: true
+  speed: 500,
+	speedAsDuration: true,
 });
 
 stickybits('nav', {

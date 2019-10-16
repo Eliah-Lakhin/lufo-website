@@ -53,7 +53,6 @@ module.exports = {
             loader: 'markdown-loader',
             options: {
               gfm: true,
-              headerIds: false,
               renderer: new marked.Renderer(),
             },
           },
