@@ -24,11 +24,11 @@ For some this was a clear evidance of self-fulfilling prophecy of Ziolkowski gen
 
 Foundation established their central base long time ago on the lone isolated island somewhere in Pacific Ocean yet hidden and undiscovered by the rest of civilization. The Island is a bastion of entire organization, where Foundation do their key researches, collecting and storing results, building up research labs and facilities, providing scientific experiments. Strategic planning and it's divisions management, logistics and secret operations on the mainland is also in charge by the Headquarters built on the Island.
 
-![The Island illustration](../images/island.jpg)
+![Island Town illustration](../images/island-town.jpg)
 
 There is a whole town built on the Island using entire range of the top engineer thinking reached by Foundation scientists, engineers and inventors. There are research labs, administrative and utility buildings, entertainments, medicine centers, residencies for the Island's permanent habitants and guests. The city is powered by electricity based on Nuclear energy, has magnetic levitation trains transportation network, electrocars, helicopters, supercomputer centers and computer networks. There is even some level of robotisation and automation. Yet, having all set of technology advances and high standars of living comfort for it's habitants in XIX century that is comparable to the rest of civilzation XXI century future level of progress, the town's planning policy still carying of the Island ecology combining urban facilities and leaving space for nature grow. Thereby the Island scientists town is a high tech, but green city.
 
-![Island Town illustration](../images/town.jpg)
+![Island Residence illustration](../images/home.jpg)
 
 One of the most remarkable projects of Foundation is a Space program finished just recently. These are just first steps in the aerospace engineering field done by Foundation, but they already built a cosmodrome on the Island and successfully launched several space missions to set orbital satellites establishing transcontinental radio communication used by Foundation divisions and agents.
 
@@ -65,7 +65,7 @@ The book consists of a set of chapters encrypted with assymetric cryptography me
 
 The book was a main source of believes and hopes of entire society for centuries since the beginning of Foundation.
 
-![Alexander Ziolkowski Prophecy](../images/prophecy.jpg)
+![Alexander Ziolkowski Prophecy](../images/retrofuturism2.jpg)
 
 ## Foundation's Society
 
@@ -86,6 +86,6 @@ To sum up Foundation society consists of several groups:
 1. Recruiting candidates. Those who are under patronage of Foundation, but not actual members yet. Usually young people showing extraordinary abilities in various fields. They don't have access to organization secrets and plans. They are getting promoted once they prove their loyalty.
 2. Ordinary members working in Foundation divisions around the world.
 3. Permanent habitants of the Island.
-4. Academicians. The governance and a court of Foundation.
+4. Academicians. The governance and the court of Foundation.
 
-![Academy Illustration](../images/academy.jpg)
+![Academy Illustration](../images/msu.jpg)
