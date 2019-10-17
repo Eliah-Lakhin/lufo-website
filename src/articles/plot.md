@@ -1,5 +1,7 @@
 # Plot and Setting
 
+__NOTICE__: The following sections contain spoilers on the game primary storyline. You can skip it until the game released.
+
 ## Backstory
 
 The story line starts in the last decade of the XIX century. The secret conspiracy organization called *Foundation* was founded somewhere in the past of the XVIII century by a fictional character Alexander Ziolkowski, genious inventor, philosophist and professor of mathematics who applied strict mathematics methods to scientifically proof the decline of the future civilization. To prevent catastrophy scenario and to rescue mankind from extinction, he established secret organization based on the strong principals of faith in science and technology advance, and in faith of the man freewill to achieve this advance through the freedom of thinking, creativity and the freedom from prejudice.

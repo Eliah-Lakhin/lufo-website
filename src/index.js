@@ -5,6 +5,7 @@ import stickybits from 'stickybits';
 
 new Gumshoe('nav a', {
   nested: true,
+  offset: 200,
 });
 
 new SmoothScroll('a[href*="#"]', {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Lunar Foundation</title>
-  <link href="lufo.7ad45b2c20fa545a2b88.css" rel="stylesheet"></head>
+  <link href="lufo.d196ef482cb87cc47716.css" rel="stylesheet"></head>
   <body class="bg-lufo-body font-regular">
     <div class="border-b border-gray-800 p-6">
       <h1 class="text-lufo-title text-4xl font-title text-center">Lunar Foundation</h1>
@@ -16,6 +16,12 @@
               <ul class="lufo-navbar-items">
                 <li>
                   <a href="#introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="#motivation">Motivation</a>
+                  <ul>
+                    <li><a href="#problem-overview">Problem Overview</a></li>
+                  </ul>
                 </li>
                 <li>
                   <a href="#plot-and-setting">Plot and Setting</a>
@@ -35,12 +41,33 @@
       
           <main class="px-8 pt-3 pb-8">
             <div class="markdown"><h1 id="introduction">Introduction</h1>
-      <p>Lunar Foundation is a hard sci-fi story-telling computer game about development of the finctional secret scientists conspiracy society in alternative history universe.</p>
+      <p>Lunar Foundation is a hard sci-fi story-telling computer game about development of the fictional secret scientists conspiracy society in alternative history universe.</p>
       <p>The game plot aims to spread certain scientific, engineering, social and phylosophical ideas. It lasts player through the partially predefined scenario letting him or her to make decisions in the key points of scenario to vary the plot and to achieve the final goal. As such the game represents a mixture of role-playing and strategic game genres where the player&#39;s character has to interact and strategically planning his/her relations with the rest of the Community&#39;s non-human player members in order to develop the common good and to move it forward.</p>
       <p>This document briefly represents the key concepts of the game, it&#39;s plot, game mechanics and some technical details of implementation. Certain concepts and design approaches are still a subject to rethink during development.</p>
       </div>
-      
+            <div class="markdown"><h1 id="motivation">Motivation</h1>
+      <h2 id="problem-overview">Problem Overview</h2>
+      <p>Being a big fan of the classic role playing games such as Fallout series and The Elder Scrolls I&#39;m thinking about evolution of the genre. The core idea standing behind RPG is to explore big open world, discovering new places, meeting new characters, understanding connections between them, learning attractive storyline, and eventually assembling the puzzle of intersecting storytelling quests to rule the world. One of the primary motivation for the player is to build the avatar character for whom he plays whatever role he imaging through the system of leveling up of various skills and collecting unique game stuff. Starting from the nomad of no-name, but eventually becoming the greatest hero.</p>
+      <p>This form of game mechanic is very attractive because it creates an illusion of dynamically evolving world letting the player to take a part of it. However, once the player studied the world he starts realizing that the world is actually static. Whatever place he visits other non-human players play performance around the main character and for him personally. The player is able to change the plot based on decisions done in quests and dialogues, but a number of possible story branches is limited and eventually discovered completely. This disappoint doesn&#39;t spoil the game per se, but it makes it lesser attractive than it could be if other characters would have their own freewill and could evolve independently too. Moreover, it could be even more attractive if other characters could be self-organizable, and able to assamle new groups or tribes to do their own and unique stories, to manage communities themselve and even build new towns.</p>
+      <p>Let&#39;s take an example of the Vualt City from Fallout 2:</p>
+      <p><img src="42ed579398369dfe7076b61b066d242d.png" alt="Vault City map"></p>
+      <p>After the long journey through the post-apocalyptic wasteland consists of ruines and decadent surviving tribes, it is very impressive to encounter such miraculous well-built town. And even more impressive when the player realizes that it was built using super-power futuristic technology fitting in just a small case called GECK.</p>
+      <p>But what if the GECK wasn&#39;t completely exhausted by the Vault City citizens yet? What if they capable to keep developing the town, assembling new buildings and facilities, expanding town&#39;s territory, having continuous evolution of the community? I believe such thoughts coming into mind to many players who walked through the game.</p>
+      <p>The later attempt towards this feature was presented in a sequel Fallout 4:</p>
+      <p><img src="893f5c1830caeebc96cf02faa366cda5.jpg" alt="Vault City map"></p>
+      <p>In Fallout 4 building mechanics was introduced as a mixture of Minecraft-like and tower-defense game mechanics, when the player is capable to build a small sattlement for a local community of NPCs to defend the community from raids and to grow it&#39;s primitive economics. What&#39;s bad about this approach, aside from the fact that the building components were not aligned by a grid, is:</p>
+      <ol>
+      <li>Contrary to Minecraft a number of components and their possible forms is limited.</li>
+      <li>The player is also limited in a number of things he can rebuild inside the sattlement&#39;s borders. So the overall game world is still feeling static, and the manual build facilitiy embeddings feel artificially too. The player is not able to reconstruct the entire game world as he does in Minecraft.</li>
+      <li>Despite the fact that NPCs are able to do some jobs on their own, their behavior is very primitive and is still mostly driven by predefined quest scenarios.</li>
+      <li>All facilities are built by the human player exclusively. Non-human players are not able to design and develop.</li>
+      </ol>
+      <p>As a result the game, in my opinion, feels incomplete as a building simulator and as a RPG both. And I think it was a direct consiquence of the mixture between game mechanism that don&#39;t fit well to each other. Even if Fallout 4 would be polished better, having blueprint like mechanics to design and develop buildings would feel bad in RPG. Why? Because of the roots of this mechanics. Initially the idea of the blueprint-based control came from the strategy games. Both real-time strategies and city-building strategies.</p>
+      <p><img src="d05239748e70506325361a66a0f5e8fb.jpg" alt="Vault City map"></p>
+      <p>In a strategy game the player has a full control in designing whatever he wants to build. His only limits are common resources(that he also has a full control of) and the map layout limitations. But in general the player is capable to establish whatever he wants and whenever he wants to. So, what is the role of the player from the RPG point of view? A master of the in-game universe. He is no longer one of many between other npc-units, he has a full control over them from the beginning. There is, generally speaking, no place for discovering and challanging individual units as the player already rules them. As such attempts of direct embedding of strategical game mechanics into RPG games doesn&#39;t work.</p>
+      </div>
             <div class="markdown"><h1 id="plot-and-setting">Plot and Setting</h1>
+      <p><strong>NOTICE</strong>: The following sections contain spoilers on the game primary storyline. You can skip it until the game released.</p>
       <h2 id="backstory">Backstory</h2>
       <p>The story line starts in the last decade of the XIX century. The secret conspiracy organization called <em>Foundation</em> was founded somewhere in the past of the XVIII century by a fictional character Alexander Ziolkowski, genious inventor, philosophist and professor of mathematics who applied strict mathematics methods to scientifically proof the decline of the future civilization. To prevent catastrophy scenario and to rescue mankind from extinction, he established secret organization based on the strong principals of faith in science and technology advance, and in faith of the man freewill to achieve this advance through the freedom of thinking, creativity and the freedom from prejudice.</p>
       <p><img src="a7da56f504eff0471346d18d9ddbc58a.jpg" alt="Backstory illustration"></p>
@@ -96,7 +123,6 @@
       </ol>
       <p><img src="9c7259f4bb31e0963af021617181d890.jpg" alt="Academy Illustration"></p>
       </div>
-            
             <div class="markdown"><h1 id="narrative-summary">Narrative Summary</h1>
       <p>The core narrative of the plot and game mechanics under the hood aims to present the following ideas:</p>
       <ol>
@@ -116,5 +142,5 @@
         &copy; <a class="underline" href="https://github.com/eliah-lakhin">Ilya Lakhin</a> 2019
       </div>
     </div>
-  <script type="text/javascript" src="lufo.7ad45b2c20fa545a2b88.js"></script></body>
+  <script type="text/javascript" src="lufo.d196ef482cb87cc47716.js"></script></body>
 </html>
