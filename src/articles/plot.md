@@ -1,6 +1,6 @@
 # Plot and Setting
 
-__NOTICE__: The following sections contain spoilers on the game primary storyline. You can skip it until the game released.
+__CAUTION__: The following sections contain spoilers on the game primary storyline. You can skip it until the game released.
 
 ## Backstory
 
