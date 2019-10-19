@@ -39,4 +39,4 @@ And the human-playable character can also influence these processes changing the
 
 This approach seem to be hard to achieve on acceptable level of realism for a first glance, but is doable when the model of interaction is well thought and designed. Such models will be described in the next sections of this Document.
 
-Also it's worth to mention that this approach is not new. Attempts towards this idea in more trivial were introduced in some modern games including The Guild game series.
+Also it's worth to mention that this approach is not new. Attempts towards this idea in more trivial form were introduced in some modern games including The Guild game series.

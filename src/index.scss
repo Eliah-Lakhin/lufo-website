@@ -78,6 +78,10 @@
   img {
     @apply block mx-auto my-8;
   }
+
+  strong {
+    @apply text-red-600;
+  }
 }
 
 @tailwind utilities;
