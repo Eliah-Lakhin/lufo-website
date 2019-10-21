@@ -6,7 +6,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const renderer = require("./md-renderer");
+const marked = require('marked')
+const Viz = require('viz.js')
+const vizRenderer = require('viz.js/full.render.js');
 
 const mode = process.env.NODE_ENV;
 const production = mode === 'production';
@@ -48,12 +50,82 @@ module.exports = {
       {
         test: /\.md$/,
         use: [
-          'html-loader',
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+            },
+          },
+          {
+            loader: 'posthtml-loader',
+            options: {
+              plugins: [
+                (() => {
+                  return function(tree, callback) {
+                    const promises = []
+
+                    tree.match({ tag: 'dot' }, (node) => {
+                      const viz = new Viz({
+                        Module: vizRenderer.Module,
+                        render: vizRenderer.render,
+                      });
+
+                      const engine = node.attrs.engine || 'dot';
+
+                      delete node.attrs.engine;
+
+                      promises.push(viz
+                        .renderString(node.content[0], {
+                          engine
+                        })
+                        .then((svg) => {
+                          Object.assign(node, {
+                            tag: 'img',
+                            attrs: {
+                              ...node.attrs,
+                              src: `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`,
+                            },
+                            content: '',
+                          });
+                        }));
+
+                        return node;
+                    });
+
+                    Promise
+                      .all(promises)
+                      .then(() => callback(), (err) => callback(err));
+                  };
+                })(),
+              ],
+            }
+          },
           {
             loader: 'markdown-loader',
             options: {
               gfm: true,
-              renderer: renderer(),
+              renderer: (() => {
+                const renderer = new marked.Renderer();
+              
+                renderer.code = ((fallback) => function(code, language) {
+                  const chunks = (language || '').match(/^(\S+)(\s+(.+))?/);
+
+                  if (!chunks || !chunks.length) {
+                    return fallback.apply(this, arguments);
+                  }
+
+                  const lang = chunks[1];
+                  const attrString = chunks[3];
+
+                  if (lang !== 'dot') {
+                    return fallback.apply(this, arguments);
+                  }
+
+                  return `<dot ${attrString}>${code}</dot>`;
+                })(renderer.code);
+              
+                return renderer;
+              })(),
             },
           },
         ],

@@ -28,25 +28,36 @@ All non-playable characters represent a set of *agents*. Each agent has a set of
 
 An example of the task trees of two agents James and Rosalind working on a common "Human-Genome" project:
 
-```mermaid rosalind-james-graph overflow-x-auto
-graph LR
-  subgraph Watson
-    J1(1 HG project) --> J2.1(2.1 Build Sequential device)
-    J2.1 --> J3.1(3.1 Go to the Storehouse)
-    J2.1 --> J3.2(3.2 Take Components)
-    J2.1 --> J3.3(3.3 Go to the Factory)
-    J2.1 --> J3.4(3.4 Assemble the device)
-    J2.2 --> J3.5(3.5 Go to Rosalind)
-    J2.2 --> J3.6(3.5 Give it Rosalind)
-    J1 --> J2.2(2.2 Deliver to Rosalind)
-  end
+```dot
+digraph JamesRosalind {
+  J1[label="1 HG project - James"];
+  J21[label="2.1 Build Sequential device"];
+  J22[label="2.2 Deliver to Rosalind"];
+  J31[label="3.1 Go to the Storehouse"];
+  J32[label="3.2 Take Components"];
+  J33[label="3.3 Go to the Factory"];
+  J34[label="3.4 Assemble the device"];
+  J35[label="3.5 Go to Rosalind"];
+  J36[label="3.6 Give it Rosalind"];
 
-  subgraph Rosalind
-    R1(1 HG Project) --> R2.1(2.1 Go to Lab)
-    R1(1 HG Project) --> R2.2(2.2 Wait for delivery)
-    R1 --> R2.3(2.3 Complete research)
-  end
+  J1 -> J21;
+  J1 -> J22;
+  J21 -> J31;
+  J21 -> J32;
+  J21 -> J33;
+  J21 -> J34;
+  J22 -> J35;
+  J22 -> J36;
 
-  J3.5 -- Interaction --> R2.2
+  R1[label="1 HG Project- Rosalind"];
+  R21[label="2.1 Go to Lab"];
+  R22[label="2.2 Wait for delivery"];
+  R23[label="2.3 Complete research"];
+
+  R1 -> R21;
+  R1 -> R22;
+  R1 -> R23;
+
+  J36 -> R22;
+}
 ```
- some text
