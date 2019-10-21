@@ -1,0 +1,51 @@
+.markdown {
+  @apply mb-32;
+
+  h1, h2, h3 {
+    @apply font-header text-green-400;
+  }
+
+  h1 {
+    @apply text-4xl mt-6 mb-1;
+  }
+
+  h2 {
+    @apply text-lg mt-4 mb-1;
+  }
+
+  h3 {
+    @apply text-sm mt-4 mb-1;
+  }
+
+  p, ul, ol, pre {
+    @apply my-3;
+  }
+
+  ul {
+    @apply list-disc ml-8;
+  }
+
+  ol {
+    @apply list-decimal ml-8;
+  }
+
+  pre {
+    @apply bg-gray-300 text-gray-900 p-2;
+  }
+
+  a {
+    @apply text-green-200 underline;
+  }
+
+  img {
+    @apply block mx-auto my-8;
+  }
+
+  strong {
+    @apply text-red-600;
+  }
+
+  em {
+    @apply text-green-200;
+  }
+}

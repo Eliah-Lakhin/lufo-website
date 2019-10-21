@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   theme: {
     extend: {
       colors: {
@@ -13,6 +14,9 @@ module.exports = {
         'header': ['Playfair Display', 'serif'],
         'regular': ['Roboto', 'sans-serif'],
       },
+      fill: {
+        'none': 'none'
+      }
     },
   },
 };

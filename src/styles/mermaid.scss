@@ -1,0 +1,46 @@
+.mermaid {
+  @apply relative max-w-full hidden;
+
+  &[data-processed="true"] {
+    @apply block;
+  }
+
+  &.rosalind-james-graph {
+    height: 700px;
+
+    svg {
+    }
+  }
+  
+  svg {
+    @apply absolute;
+
+    .node {
+      rect, circle, polygon {
+        @apply text-sm text-white fill-none stroke-current !important;
+      }
+    }
+
+    .label {
+      @apply text-sm text-white !important;
+    }
+
+    .edgePath path {
+      @apply text-sm text-white stroke-current !important;
+    }
+
+    .edgeLabel {
+      @apply bg-transparent !important;
+    }
+
+    .cluster {
+      rect {
+        @apply fill-none !important;
+      }
+
+      > .label div {
+        @apply text-base underline !important;
+      }
+    }
+  }
+}

@@ -1,7 +1,9 @@
-import './index.scss';
+import './styles/index.scss';
+
 import Gumshoe from 'gumshoejs';
 import SmoothScroll from 'smooth-scroll';
 import stickybits from 'stickybits';
+import mermaid from 'mermaid'
 
 new Gumshoe('nav a', {
   nested: true,
@@ -15,4 +17,11 @@ new SmoothScroll('a[href*="#"]', {
 
 stickybits('nav', {
   stickyBitStickyOffset: 50,
+});
+
+mermaid.initialize({
+  theme: 'dark',
+  flowchart: {
+    curve: 'basis',
+  },
 });

@@ -39,4 +39,4 @@ And the human-playable character can also influence these processes changing the
 
 This approach seem to be hard to achieve on acceptable level of realism for a first glance, but is doable when the model of interaction is well thought and designed. Such models will be described in the next sections of this Document.
 
-Also it's worth to mention that this approach is not new. Attempts towards this idea in more trivial form were introduced in some modern games including The Guild game series.
+Also it's worth to be mentioned that this approach doesn't exclude embeddinigs of the gameplay mechanics from other genres in form of a mini-game. Let's say if certain building was designed by an NPC architect by an order of the player's character, it's fine and maybe even fun if the player puts some final changes in design project. Like he changes wall materials, moves some interrior objects or even added additional room. What's important here is that these changes will not be forcefully required in a primary mechanics to walk the game through.

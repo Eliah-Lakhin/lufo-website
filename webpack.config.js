@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const marked = require("marked");
+const renderer = require("./md-renderer");
 
 const mode = process.env.NODE_ENV;
 const production = mode === 'production';
@@ -53,7 +53,7 @@ module.exports = {
             loader: 'markdown-loader',
             options: {
               gfm: true,
-              renderer: new marked.Renderer(),
+              renderer: renderer(),
             },
           },
         ],
@@ -75,6 +75,7 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: [
+                require('postcss-import'),
                 require('tailwindcss'),
                 require('autoprefixer'),
               ],
