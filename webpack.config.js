@@ -123,6 +123,14 @@ module.exports = {
 
                   return `<dot ${attrString}>${code}</dot>`;
                 })(renderer.code);
+
+                renderer.link = ((fallback) => function(href, title, text) {
+                  if (!href.match(/^http/)) {
+                    return fallback.apply(this, arguments);
+                  }
+
+                  return `<a href="${href}" target="_blank"${title ? ` title="${title}"` : ''}>${text}</a>`;
+                })(renderer.link);
               
                 return renderer;
               })(),

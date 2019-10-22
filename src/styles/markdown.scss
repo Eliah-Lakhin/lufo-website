@@ -48,4 +48,12 @@
   em {
     @apply text-green-200;
   }
+
+  code {
+    @apply text-green-200 text-sm;
+
+    &:before, &:after {
+      content: '`';
+    }
+  }
 }
