@@ -10,23 +10,37 @@ All elements of the map procedurally generated based on a number of a smaller pr
 
 The player is able to step into the buildings and its' rooms, interact with objects inside the buildings including electronic devices, computers, control panels, buttons, leverages, mechanisms, elevators, books, and some other small objects. He can read texts and messages found in books and devices, and keep them as notes in the UI.
 
-There are several independent maps in the game available for exploring. The player is able to use vehicals to move between maps, and also to travel inside a single map faster. An example of such transportations could be, for example, ships to travel by water from the Island to the mainland, a Spacecraft to travel to the moon and back, and the monorail train to travel on the Island's map.
+There is one primary map on the game where the main action taking place and available for exploring, and several independent small maps for side quests. The player is able to use vehicals to move between maps, and also to travel inside a single map faster. An example of such transportations could be, for example, ships to travel by water from the Island to the mainland, a Spacecraft to travel to the moon and back, and the monorail train to travel on the Island's map.
 
-Once the player's character approaches some NPC he is able to initiate dialog with the player.
+The overlall number of the non-playable characters actively simualted by the primary game AI is around a hundred of units. But the game engine also simulates more units that reveals on the map temporary from time to time, and not available for interaction that performing direct action and serving decorative purposes mostly. Example of such units are robots, animals, the temporary visitors of the Island and the storytelling characters.
+
+The primary game map is a tropical Island. In the beginnig of the game the Island map is already developed. The player and the commmunity are keep developing and evolving it to another point of time from which they will relocate to the map of the Moon site with the different set of content, to establish a moon base from scratch. For details see [Plot and Setting](#plot-and-setting) section.
+
+All permanent non-playable characters in the game are completely independent and procedurally generated units that have the same abilities as the playable character does. They live their own life in the game world, and interacting with each other as well as with the playable character, and the same way the playable character does. Both playable and non-playable characters can initiate dialogues to each other, take part in quests, building up social relationships, assembling new buildings, facilities and goods, advancing researches and economics of the game. The non-playable characters are driven by the game AI simulation models.
 
 ![Dialog interaction example](../images/dialog-interaction.jpg)
 
-In contrast to classic RPGs the player doesn't have any forms of skills that he can level up. The primary way of walking thought the game is by interacting with other NPCs through dialogs, understanding connections between characters based on collected information and connecting characters in right way to achieve desirable goals.
+The dialog options and the quests are not predefined(except a few storytelling events), and completely based on the current gameplay situation that dynamically changing.
 
-Any forms of fight interactions or violance mechanics are also missing in the game. The game is primary focuses on social interactions and development of the game world in a purely peaceful way.
+The primary ways of walking thought the game are:
+ - By interacting with other NPCs through dialogs, understanding connections between characters based on collected information and connecting characters in right way to achieve desirable goals.
+ - Leveling up personal skills, but also helping other characters to level up their skills to.
+ - Taking part in research and engineering projects and/or organizing own projects.
+ - Taking part in existing "tribes" and/or organizing a new one.
+ - Building up personal and tribal political influence, and changing the overall characters community policy in various ways.
+ - Technological progress of the overal community.
+
+Any forms of fight interactions or violance mechanics are missing in the game. The game is primary focuses on social interactions and development of the game world in a purely peaceful way.
 
 ## Game AI Model
 
 As was mentioned [ealier](#solution) non-playable characters should be able to interact to each other autonomously from the player, unite into groups to organize common projects and to evolve the game world in general.
 
-All non-playable characters represent a set of *game agents*. Each agent has a set of tasks that it wants to perform. The set of tasks forming a tree of tasks when each subnode representing a subtask required to be performed to accomplish a supertask's goal. Every subtask has a priority from it's supertask prospective. The leaf tasks contain actual elementary actions need to be executed to accomplish it's supertask.
+All non-playable characters represent a set of *game agents*.  For the sake of simplicity we will call both playable and non-playable characters as *agents*. Both have the same set of base characteristics and options and are equal from the game mechnics context. In general, the NPCs don't distinct between the player's controlled character and other NPCs when they interact to each other. The differences are only in the way of control: the playable character actions are driven by a player, and the NPCs are driven by the game AI.
 
-Similarly to the player actions, the list of actions for NPC agent include:
+Each AI controlled agent has a set of tasks that it wants to perform. The set of tasks forming a tree of tasks when each subnode representing a subtask required to be performed to accomplish a supertask's goal. Every subtask has a priority from it's supertask prospective. The leaf tasks contain actual elementary actions need to be executed to accomplish it's supertask.
+
+The list of available actions for the agent:
  - Walking to specific place on map by foot, using vehicals or any other transportations.
  - Getting an object to be delivered to another place.
  - Applying the object to the target place, facility or giving it to another agent.
@@ -86,9 +100,34 @@ The task tree can be seen as a decision-action tree that represents a "program" 
 
 For each node there is predefined set of success conditions that include timeframe of completion and other metrics too. Once the node task failed or interrupted it tries to re-evaluate a subtree from the parent task. If the parent task cannot be evaluated to required conditions in a new circumstances cannot be met, the algorithm re-evaluates the next parent subtree up to the root.
 
-Subtree evaluation process is based on genetic algorithm stacking all possible subnodes together. The node set and their stacking options(both sealed and varying) are representing [L-System](https://en.wikipedia.org/wiki/L-system) grammar. The genetic algoithm uses the current subtree root node goals and circumstances as a target function.
+Subtree evaluation process is based on genetic algorithm stacking all available subnode types together. The node set and their stacking options(both sealed and varying) are representing [L-System](https://en.wikipedia.org/wiki/L-system) grammar. The genetic algoithm uses the current subtree root node goals and circumstances as a target function.
 
 The information that the agent can use when he makes a decision is completely based on his personal life experience in the game world and also personal character skills too. So the NPC is, broadly speaking, in the same boat as the playable character. Despite the fact that all game agents sharing the same set of task nodes to build up their task trees, the variying features of each nodes adjusted during their walkthrough experience and continuously adjusting accordingly. As such it makes each NPC behavior unique too.
 
-## Social Model
+## Game Agent
 
+Each *game agent* has a set of features defining his behavior, character uniqueness and circumstances. Some of the features are opened for all other agents, but most are hidden. Most of the features are variable and changing or progressing during the gameplay simulation.
+
+The features could be divided into several groups:
+
+1. __Base unit feature.__ All of these features are variable features and always known to other agents. The playable character is also can get access to them through the user interface.
+
+  | Feature | Comments |
+  | -- | -- |
+  | Location on the map | Coordinates on the current game map |
+  | Residence place | House or apartment the agent lives in |
+  | Current role/position in the project | The agent can take a part in only one project at a time |
+  | Current political role  | |
+
+2. __Professional features.__ They affect the efficiency of the agent when he is working on specific task in the project. There is a number of professions required to complete the project. Exact set of professions avaiable in the game is defined by the currently revealed projects. Some professions are shared across several projects, and some are unique. These features are hidden to other agents by default. Each agent in theory can do any work in the project, but the effeciency can differ significantly. The details on the projects and the gameplay economics will be described in the next section.
+
+  | Feature | Comments |
+  | -- | -- |
+  | Level of skills | The level of skill defines the speed of the task completion. When the agent works on the task the relevant skills are leveling up once the task is completed successfully. That means that the agent prefers working on the tasks based on his skills. And other agents may want to engage the most suitable agent based on their known skills. |
+  | Skill leveling curves | Agents may have different learning curves. For example, for some it's easier to level up in the beginning, but harded to progress later stages. The learning curve is defined by a formula with unique factors. These factors are static for the whole agent's lifetime. Also these factors are hidden for the agent themselve. So the agent doesn't know even his own potential strength and weaknesses too. But he(and other agents too) is able to guess it during a set of tries. The guessing algorithm is based on polynomial approximation. |
+
+3. __Personal characteristics.__ Various scale characterisitcs of the agent that influence his priorities. All of these features are hidden for other agents by default and parmanent during the agent lifetime.
+
+  | Feature | Comments |
+  | -- | -- |
+  | Introvert/Extravert scale | Introverts  |

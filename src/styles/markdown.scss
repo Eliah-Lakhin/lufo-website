@@ -56,4 +56,24 @@
       content: '`';
     }
   }
+
+  table {
+    @apply w-full;
+
+    th, td {
+      @apply border border-gray-800 px-4 py-1;
+
+      &:first-child {
+        @apply w-64;
+      }
+    }
+
+    th {
+      @apply font-normal;
+    }
+
+    th {
+      @apply bg-gray-500 text-gray-800;
+    }
+  }
 }
