@@ -1,20 +1,20 @@
 .markdown {
   @apply mb-32;
 
-  h1, h2, h3 {
-    @apply font-header text-green-400;
+  h1, h2 {
+    @apply font-header;
   }
 
   h1 {
-    @apply text-4xl mt-6 mb-1;
+    @apply text-4xl mt-16 mb-4 text-green-400;
   }
 
   h2 {
-    @apply text-lg mt-4 mb-1;
+    @apply text-xl mt-8 mb-4 text-green-400;
   }
 
   h3 {
-    @apply text-sm mt-4 mb-1;
+    @apply text-lg underline mt-8 px-4 py-1;
   }
 
   p, ul, ol, pre {
@@ -58,22 +58,24 @@
   }
 
   table {
-    @apply w-full;
-
     th, td {
       @apply border border-gray-800 px-4 py-1;
+    }
 
-      &:first-child {
-        @apply w-64;
+    th {
+      @apply font-normal bg-gray-800;
+    }
+  }
+
+  .table-description {
+    table {
+      @apply w-full;
+
+      th, td {
+        &:first-child {
+          @apply w-64;
+        }
       }
-    }
-
-    th {
-      @apply font-normal;
-    }
-
-    th {
-      @apply bg-gray-500 text-gray-800;
     }
   }
 }

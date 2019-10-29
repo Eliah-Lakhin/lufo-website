@@ -36,34 +36,34 @@ Any forms of fight interactions or violance mechanics are missing in the game. T
 
 As was mentioned [ealier](#solution) non-playable characters should be able to interact to each other autonomously from the player, unite into groups to organize common projects and to evolve the game world in general.
 
-All non-playable characters represent a set of *game agents*.  For the sake of simplicity we will call both playable and non-playable characters as *agents*. Both have the same set of base characteristics and options and are equal from the game mechnics context. In general, the NPCs don't distinct between the player's controlled character and other NPCs when they interact to each other. The differences are only in the way of control: the playable character actions are driven by a player, and the NPCs are driven by the game AI.
+All non-playable characters represent a set of *game agents*.  For the sake of simplicity we will call both playable and non-playable characters as *agents*. Both have the same set of base characteristics and interaction options and are equal from the game mechnics point of view. In general, NPCs don't distinct between the player's controlled character and other NPCs when they interact to each other. The differences are only in the way of control: the playable character actions are driven by a player, and NPCs are driven by the game AI.
 
-Each AI controlled agent has a set of tasks that it wants to perform. The set of tasks forming a tree of tasks when each subnode representing a subtask required to be performed to accomplish a supertask's goal. Every subtask has a priority from it's supertask prospective. The leaf tasks contain actual elementary actions need to be executed to accomplish it's supertask.
+Each AI controlled agent has a set of tasks that it wants to perform. The set of tasks shaping tree of tasks when each subnode represents a subtask required to be performed to accomplish a supertask's goal. Every subtask has priority from it's supertask prospective. The leaf tasks contain actual elementary actions need to be executed to accomplish it's supertask.
 
 The list of available actions for the agent:
  - Walking to specific place on map by foot, using vehicals or any other transportations.
  - Getting an object to be delivered to another place.
  - Applying the object to the target place, facility or giving it to another agent.
  - Getting a construction device.
- - Performing a work with specific facility. This includes assembling devices, vehicals, mechanisms. Taking part in construction of the building, working on researches in labs etc.
- - Conversation with another agent to set or recieve directs, or to gether information.
+ - Working with specific facility. This includes assembling devices, vehicals, mechanisms. Also taking part in construction of the building, working on researches in labs etc.
+ - Initiating conversation session with another agent to set or recieve directs, and to gether or to provide information.
  - Performing an everyday and regular objectives such as sleep, rest, recreation, medical examinations, etc.
 
 Let's assume the following simplified example of task trees of two agents John and Rita working on a common "Human-Genome" project:
 
 ```dot
-digraph MaryPierre {
+digraph JohnRita {
 
   subgraph clusterJohn {
     label="John"
 
     J1[label="1 HG project"];
-    J21[label="2.1 Build\nSequential device"];
-    J22[label="2.2 Deliver to\nRita"];
+    J21[label="2.1 Contruct\nSequential device"];
+    J22[label="2.2 Deliver device to\nRita"];
     J31[label="3.1 Go to\nStorehouse"];
     J32[label="3.2 Get\nComponents"];
     J33[label="3.3 Go to\nFactory"];
-    J34[label="3.4 Assemble"];
+    J34[label="3.4 Assemble\ndevice"];
     J35[label="3.5 Go to\nRita"];
     J36[label="3.6 Give it\nto Rita"];
   }
@@ -96,38 +96,74 @@ digraph MaryPierre {
 
 Once all steps are finished the project is done. But certain things could happen that will interrupt this process. For example, once John arrives Storehouse he realizes that it runs out of required components. Or Rita decided to join another project in the middle of the process. In such cases the agent starts re-evaluating of his tasks tree based on collected information.
 
-The task tree can be seen as a decision-action tree that represents a "program" of the agent actions. The nodes of the tree built up from a large set of predefined components that could be stacked together based on their features. Some of the features are sealed, another components are varying based on information gathered by the agent. For instance, `Go to <place>` node must always be a leaf node. This is a sealed feature. However, the choice between two similar places is an option. Like, there are two Storehouses containing two similar sets of required components. And the agent knows from his history that it more likely for him to get success if he went to the second Store.
+The task tree can be seen as a decision-action tree that represents a "program" of the agent actions. The nodes of the tree built up from a large set of predefined components that could be stacked together based on their attributes. Some of the attributes are sealed, and some are varying based on information gathered by the agent. For instance, `Go to <place>` node must always be a leaf node. This is a sealed feature. However, the choice between two similar places is an option. Like, there are two Storehouses containing two similar sets of required components. And the agent knows from his history that it more likely for him to get success if he went to the second Storehouse.
 
-For each node there is predefined set of success conditions that include timeframe of completion and other metrics too. Once the node task failed or interrupted it tries to re-evaluate a subtree from the parent task. If the parent task cannot be evaluated to required conditions in a new circumstances cannot be met, the algorithm re-evaluates the next parent subtree up to the root.
+Information that the agent can use when he makes a decision is based on his life experience in the game world only. So the NPC is, broadly speaking, in the same boat as the playable character. Despite the fact that all game agents sharing the same set of task node types to build up their task trees, the variable attributes of the node instances are unique per agent, and adjusting during the agent walkthrough experience. As such it makes each NPC behavior unique too.
 
-Subtree evaluation process is based on genetic algorithm stacking all available subnode types together. The node set and their stacking options(both sealed and varying) are representing [L-System](https://en.wikipedia.org/wiki/L-system) grammar. The genetic algoithm uses the current subtree root node goals and circumstances as a target function.
+For each node there is predefined set of success conditions that include timeframe of completion and other metrics too. Once the node task failed or interrupted, the algorithm is trying to re-evaluate a subtree from the parent task. If the parent task cannot be evaluated to required conditions in a new circumstances, the algorithm re-evaluates the next parent subtree up to the root.
 
-The information that the agent can use when he makes a decision is completely based on his personal life experience in the game world and also personal character skills too. So the NPC is, broadly speaking, in the same boat as the playable character. Despite the fact that all game agents sharing the same set of task nodes to build up their task trees, the variying features of each nodes adjusted during their walkthrough experience and continuously adjusting accordingly. As such it makes each NPC behavior unique too.
+Subtree evaluation process is based on genetic algorithm stacking all available subnode types together. The node set and their stacking options(both sealed and varying) are representing [L-System](https://en.wikipedia.org/wiki/L-system) grammar. Genetic algoithm uses the current subtree root node goals and circumstances as a target function.
 
-## Game Agent
+## Agent Profile
 
-Each *game agent* has a set of features defining his behavior, character uniqueness and circumstances. Some of the features are opened for all other agents, but most are hidden. Most of the features are variable and changing or progressing during the gameplay simulation.
+Each *game agent* has a set of attributes that defines character's role in the game world, unique behavior, personal preferences, strengths and weaknesses, communication and work skills, capabilities in social interactions, etc.
 
-The features could be divided into several groups:
+The set of base agent unit attributes are always public to all agents:
+<div class="table-description">
 
-1. __Base unit feature.__ All of these features are variable features and always known to other agents. The playable character is also can get access to them through the user interface.
-
-  | Feature | Comments |
+  | Attribute | Description |
   | -- | -- |
   | Location on the map | Coordinates on the current game map |
   | Residence place | House or apartment the agent lives in |
   | Current role/position in the project | The agent can take a part in only one project at a time |
-  | Current political role  | |
+  | Current political role | Official management functions in the overall community |
 
-2. __Professional features.__ They affect the efficiency of the agent when he is working on specific task in the project. There is a number of professions required to complete the project. Exact set of professions avaiable in the game is defined by the currently revealed projects. Some professions are shared across several projects, and some are unique. These features are hidden to other agents by default. Each agent in theory can do any work in the project, but the effeciency can differ significantly. The details on the projects and the gameplay economics will be described in the next section.
+</div>
 
-  | Feature | Comments |
+Other profile attributes are hidden for other agents by default, and some even hidden for the agent himself, but could be described. Hidden profile attributes exploration is a key in the primary gameplay mechanics that drives game simulation and progression.
+
+Hidden attributes divided into three groups: agent skills that the agent is leveling up, communication traits, and behavior traits. Traits are permanent most of the time, but some of them can slightly change by the storyline events and by the projects completion too.
+
+### Skills
+
+They affect the efficiency of the agent when he is working on specific task in the project or talk to other agents.
+
+There is a number of professions required to complete the project. Exact set of professions available in the game is defined by the currently discovered projects. Some professions are shared across several projects, and some are unique. These traits are hidden to other agents by default. Each agent in theory can do any work in the project, but the effeciency can differ significantly. The details on the projects and the gameplay economics model described in the next section.
+
+<div class="table-description">
+
+  | Skill | Function |
   | -- | -- |
-  | Level of skills | The level of skill defines the speed of the task completion. When the agent works on the task the relevant skills are leveling up once the task is completed successfully. That means that the agent prefers working on the tasks based on his skills. And other agents may want to engage the most suitable agent based on their known skills. |
-  | Skill leveling curves | Agents may have different learning curves. For example, for some it's easier to level up in the beginning, but harded to progress later stages. The learning curve is defined by a formula with unique factors. These factors are static for the whole agent's lifetime. Also these factors are hidden for the agent themselve. So the agent doesn't know even his own potential strength and weaknesses too. But he(and other agents too) is able to guess it during a set of tries. The guessing algorithm is based on polynomial approximation. |
+  | Base communication skill level | Defines the ability of the agent to simulate any emotional traits that don't belong to his profile. This skill is leveling up when the agent reaches desirable goals in conversation session with another agent. |
+  | Level of professional skills | Individual level of skill defines speed of the task completion. When the agent works on the task, the relevant skills are leveling up once the task completed successfully. Means that the agent prefers working on the tasks based on his skills. And other agents may want to engage the most suitable agent based on their known skills to the project. |
+  | Professional skill leveling curves | Agents may have different learning curves. For example, for some it's easier to level up in the beginning, but harded to progress later stages. The learning curve is defined by a formula with unique factors. These factors are static for the whole agent's lifetime. Also these factors are hidden for the agent himself too. So the agent doesn't know even his own potential strength and weaknesses too. But he(and other agents too) is able to guess it during a set of tries. The guessing algorthim of the personal skills is based on polynomial approximation. Also there is one project allows to reveal leveling curves for all agents at once. |
 
-3. __Personal characteristics.__ Various scale characterisitcs of the agent that influence his priorities. All of these features are hidden for other agents by default and parmanent during the agent lifetime.
+</div>
 
-  | Feature | Comments |
+### Emotional Profile
+
+This set of discrete relay traits represents emotional nuanses of speach and behavior in communicating with other agents. They affect agent's communication capabilities only, and don't affect any functional aspects. The more emotional traits match between two agents the more chance they come into arrangment in conversation. In other words the agents with closer Emotional Profiles tend to understand better each other by default. Also the agent is able to slowly learn other agents emotional traits he speaks to, and as such he can adjust his way of communication individually to grow his influence.
+
+  - Politeness / Rudeness
+  - Optimistic / Pessimistic
+  - Cheerful / Moody
+  - Verbose / Concise
+  - Idealist / Realist
+
+### Behavior Traits
+
+Various scale characterisitcs measuring behavior functions of the agent that affect agent's task priorities and decision making.
+
+<div class="table-description">
+
+  | Trait | Function |
   | -- | -- |
-  | Introvert/Extravert scale | Introverts  |
+  | Solidity/Agility scale | Measures the ability of the agent to stick with initially choosen plan regardless of the changing circumstances. This measurement applies to the technical goals only. |
+  | Morale scale | Same as Solidity, but in the opposite to Solidity it applies to the human relations. In other words this scale estimates the trustworthy of the agent in long-term cooperations. |
+  | Secretivity scale | Estimates whether the agent tends to keep valuable information hidden to the agents he doesn't trust well. |
+  | Introvert/Extrovert scale | Introverts tend to level up their own skills and to learn their own skill curves at first place. Extroverts tend to learn other agent traits, and relationships between agents. |
+  | Empathy scale | Defines speed in learning of other agent *Emotional Profiles* during conversations, and the speed of the base communication skill leveling up. |
+  | Altruism/Egoism scale | Altruists tend to make decisions in controversial situations to help other people reaching their goals. Egoists care about their personal goals first. |
+  | Comfort/Ascetism scale | How much the agent values a quality of life. This aspect influences the desirability of the agent to support initiatives and projects aiming to increase the common community wellfare as well as his own quality of life. |
+
+</div>
