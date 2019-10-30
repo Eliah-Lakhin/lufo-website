@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     {{#each meta}}
-      <meta name="{{@key}}" content="{{this}}">
+      <meta name="{{@key}}" content="{{this}}" />
     {{/each}}
+    <meta property="og:locale" content="{{og.locale}}" />
+    <meta property="og:type" content="{{og.type}}" />
+    <meta property="og:title" content="{{og.title}}" />
+    <meta property="og:description" content="{{og.description}}" />
+    <meta property="og:url" content="{{og.url}}" />
+    <meta property="og:image" content="{{og.image}}" />
     {{#if production}}
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ga}}"></script>
