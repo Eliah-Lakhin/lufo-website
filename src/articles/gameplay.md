@@ -104,7 +104,7 @@ The task tree can be seen as a decision-action tree that represents a "program" 
 
 ### Tree Evaluation Process
 
-The nodes of the tree built up from a set of predefined *node types* that could be stacked together based on the match requirements. Match requirements determined by the gameplay models and rules sealed inside particular node implementation algorithm and could vary based on the agent previous experience.
+The nodes of the tree built up from a set of predefined *node types* that could be stacked together based on the match requirements. Matching requirements determined by the gameplay models and rules sealed inside particular node implementation algorithm and could vary based on the agent previous experience.
 
 Once the node task failed or interrupted, the algorithm is trying to re-evaluate a subtree from the parent task. If the parent task cannot be evaluated to required conditions in a new circumstances, the algorithm re-evaluates the next parent subtree up to the root.
 
@@ -167,9 +167,16 @@ Various scale characterisitcs measuring behavior functions of the agent that aff
   | Secretivity scale | Estimates whether the agent tends to keep valuable information hidden to the agents he doesn't trust well. |
   | Introvert/Extrovert scale | Introverts tend to level up their own skills and to learn their own skill curves at first place. Extroverts tend to learn other agent traits, and relationships between agents. |
   | Empathy scale | Defines speed in learning of other agent *Emotional Profiles* during conversations, and the speed of the base communication skill leveling up. |
-  | Altruism/Egoism scale | Altruists tend to make decisions in controversial situations to help other people reaching their goals. Egoists care about their personal goals first. |
+  | Altruism/Egoism scale | Altruists tend to make decisions in controversial situations to help other agents reaching their goals. Egoists care about their personal goals at first place. |
   | Comfort/Ascetism scale | How much the agent values a quality of life. This aspect influences the desirability of the agent to support initiatives and projects aiming to increase the common community wellfare as well as his own quality of life. |
 
 </div>
 
 ## Communication Model
+
+There are two ways of information distribution between agents:
+
+  1. Public distibution through the news digest.
+  2. Personal private conversation between two agents.
+
+

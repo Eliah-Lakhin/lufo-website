@@ -2,7 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Lunar Foundation</title>
+    <title>{{title}}</title>
+    {{#each meta}}
+      <meta name="{{@key}}" content="{{this}}">
+    {{/each}}
+    {{#if production}}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ga}}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ga}}');
+      </script>
+    {{/if}}
   </head>
   <body class="bg-lufo-body font-regular">
     {{> header}}

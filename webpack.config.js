@@ -9,6 +9,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const marked = require('marked')
 const Viz = require('viz.js')
 const vizRenderer = require('viz.js/full.render.js');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+
+const config = require('./config.json');
 
 const mode = process.env.NODE_ENV;
 const production = mode === 'production';
@@ -178,6 +181,7 @@ module.exports = {
         to: '.',
       },
     ]),
+    new FaviconsWebpackPlugin('./src/images/logo.png'),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].css',
@@ -193,9 +197,13 @@ module.exports = {
           }
 
           return new HtmlWebpackPlugin({
-            title: 'Lunar Foundation',
             filename: parsed[0] === 'index' ? 'index.html' : `${parsed[0]}/index.html`,
             template: `src/pages/${filename}`,
+            templateParameters: {
+              ...config,
+              production: production,
+              development: !production
+            },
           });
         }
       )
