@@ -1,4 +1,4 @@
-Тезисы для доклада Sibirian Digital Art Conference 16-го ноября.
+Тезисы для доклада Siberian Digital Art Festival 16-го ноября.
 
 # Лунное Основание
 
