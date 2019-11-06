@@ -38,6 +38,7 @@ When the player taking a role as a project administrator he is able to assemble 
 Private conversations happening between agents in a form of dialog when one agent approaches another agent. There are certain options for the agent in dialog such as:
   - Asking for the issues other agent is facing in his work.
   - Asking to help in personal work issues.
+  - Discovering other agent personal profile features through the dialog options.
   - Asking for the hidden information on the project progression.
   - Asking for the 3rd party agent hidden profile information.
   - Asking for the other agent of his personal strategical goals and the current strategical plans.
