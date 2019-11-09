@@ -23,7 +23,7 @@ When the agent publishes an item he is able to also refer some relevant articles
 
 For the player the digest list is accessible through the User Interface for reading. To publish an item there is a mini-game when the player comes to his own residence to work on the article, then picking possible item goals and references, and then come into Department of Information and ask NPC to publish the article.
 
-Also the Journal is used to spread storytelling events in the game too.
+Also the Journal is used to spread storytline events in the game too.
 
 ![Journal cover](../../images/journal.jpg)
 

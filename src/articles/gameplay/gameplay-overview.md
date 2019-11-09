@@ -16,7 +16,7 @@ The primary game map is a tropical Island. In the beginnig of the game the Islan
 
 All permanent non-playable characters in the game are completely independent and procedurally generated units that have the same capabilities as the playable character does. They live their own life in the game world, and interacting to each other as well as to the playable character, and the same way the playable character does. Both playable and non-playable characters can initiate dialogues to each other, take part in quests, building up social relationships, assembling new buildings, facilities and goods, advancing researches and economics of the game. The non-playable characters are driven by the game AI simulation models.
 
-The overlall number of the non-playable characters actively simualted by the primary game AI is around a hundred of units. But the game engine also simulates more units that reveals on the map temporary from time to time, and not available for interaction. They perform direct predefined scenario driven actions only or is a part of the environment. Example of such units are robots, animals, the temporary visitors of the Island and the storytelling characters.
+The overlall number of the non-playable characters actively simualted by the primary game AI is around a hundred of units. But the game engine also simulates more units that reveals on the map temporary from time to time, and not available for interaction. They perform direct predefined scenario driven actions only or is a part of the environment. Example of such units are robots, animals, the temporary visitors of the Island and the storyline characters.
 
 The list of base actions that simulated NPCs can do are:
  - Walking to specific place on map by foot, using vehicals or any other transportations.
@@ -29,7 +29,7 @@ The list of base actions that simulated NPCs can do are:
 
 ![Dialog interaction example](../../images/dialog-interaction.jpg)
 
-The dialog options and the quests are not predefined(except a few storytelling events), and completely based on the current gameplay situation that dynamically changing.
+The dialog options and the quests are not predefined(except a few storyline events), and completely based on the current gameplay situation that dynamically changing.
 
 The primary ways of walking thought the game are:
  - By interacting with other NPCs, understanding connections between them based on gathered data and influencing characters through dialogs and quest completion to achieve desirable goals.

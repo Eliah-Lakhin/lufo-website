@@ -58,8 +58,10 @@ The success of the working group depends on the member agents profiles. When the
 
 Also the agents with high Agility trait tend to change their positions and leave projects once they found better positions. If the agent leaves the project, then the project Administrator have to find suitable replacement which is also a challenge too.
 
+If the Administrator leaves the project, the project is cancelling. That action affects his personal reputation towards the hired working group and the public reputation depending on the damage to the community this cancellation brought. So, in general, Administrators of the projects and infrastructure system don't interest in leaving their roles. The Administrator of the project, however, could be replaced by decision of the Government without the damage to the project.
+
 ### Resource management 
 
 Since the community economics is not self-sufficient in the beginning of the game, most of the base material resources are delivering from the external world. The resouce management and their spread across the projects and infrastructure systems is controlled by the community Government.
 
-As was mentioned earlier the Government tend to support existing infrastructure at first place. The extra resources are invested in new projects based on the project promoter public reputation, personal preferences of the Government members that determines by their traits, and the ineterest of the Government mebers clans.
+As was mentioned earlier the Government tend to support existing infrastructure at first place. The extra resources are invested in new projects based on the project promoter public reputation, personal preferences of the Government members that determines by their traits, and the ineterest of the Government members clans.
