@@ -4,13 +4,13 @@ The Government of the community consists of several game agents called *Academic
 
 All political processes, votes and decisions made by the Government are public for the entire community. This information can be used by Extravert agents to reveal outlier actions of the government and discover other clan strctures and it's influence power.
 
-### Election and Denunciation
+### Election and Resignation
 
 Any agent in the game taking a part in election in both candidate and voter roles. Each agent has only one vote he can give to any other agent except himself.
 
 The members of the clans are voting either for their Leaders or for the candidate set by their Leaders. Loner agents are voting based on candidate general public reputation and personal attitudes. The candidate who took larger number of votes than the other candidates will gain Academician status. The voting process is public, so each agent knows who were supporters of a candidate.
 
-Denunciation is a rare event that could happen only when Academician looses his public reputation dramatically. In this case other academicians can vote against him to take away his position. If there are more than 3/4 votes aganist the agent, he loses his status. Loner Academician agents are voting based on public reputation metric and personal attitude too, whereas clan members can keep supporting their member regardless of these factors. Denounciation votes are also public.
+Resignation is a rare event that could happen only when Academician looses his public reputation dramatically. In this case other academicians can vote against him to take away his position. If there are more than 3/4 votes aganist the agent, he loses his status. Loner Academician agents are voting based on public reputation metric and personal attitude too, whereas clan members can keep supporting their member regardless of these factors. Resignation votes are also public.
 
 ### Government functions
 
