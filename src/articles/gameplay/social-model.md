@@ -1,7 +1,7 @@
 ## Social Model
 
 There are three base personal priorities that define agent's goals:
-  1. __Personal breakthrough.__ Breakthrough mechanics will be described in more details in the next section, but if the agent has a breakthrough idea, it's implementation becomes his top priority.
+  1. __Personal breakthrough.__ Breakthrough mechanics will be described in more details in [this section](#economics-model), but if the agent has a breakthrough idea, it's implementation becomes his top priority.
   2. __Clan power grow.__ Some of the agents establishing secret permanent alliances of interests between each other to work on the common goals. The network of alliances shape hierarchical clans that compete to each other. If the agent belong to a clan, clan's power is the second priority among other things.
   3. __General community progress.__ Any initiatives and events that can move the overall community progress forward from the agent traits and skills point of view and don't contradict other priorities will be supported by the agent.
 
@@ -64,14 +64,14 @@ In general clan's power defined by the number of members, their skills and reput
 
 To compete to other clans the clan can use a wide number of instruments including promotion of it's members based on their skills to prospective projects, promotion the members to the government administrative roles, boosting public reputation of it's members, recruiting new members, and preventing the similar action of it's competitor clans.
 
-Due to differences in personal profile traits and skills not all members can become good players of the clan system. As such many of the agents in the game don't belong to any clan. There are a lot of *Loners* who work on their own. However they could be useful in the clan competition strategies. For example, if one loner has advanced skills in specific field important for prospective project, the clan members will try to involve him in the project, and could even compete to each other to hire him.
+Due to differences in personal profile traits and skills not all members can become good players of the clan system. As such many of the agents in the game don't belong to any clan. There are a lot of *Loners* who work on their own. However they could be useful in the clan competition strategies. For example, if one loner has advanced skills in specific field important for prospective project, the clan members will try to involve him in the project, and could even compete to other clan members to hire him.
 
 The allies hierarchies between members and the clans themselve are "unofficial" terms. These types of relations are completely hidden to other agents by default. The structure of the clan even hidden to it's members. So understanding the social structure and it's dynamics prediction is important challange on all steps of the game evolution. The agents with high Extravert traits tend to be more efficient in this process. They use various prediction approaches based on information they could gain from two sources:
 
-1. If the agent is a member of the clan already, he could ask for his Leader and Supporter of their relations with other agents directly, and to gain accurate information.
+1. If the agent is a member of the clan already, he could ask for his Leader and Supporters of their relations with other agents directly, and to gain accurate information.
 2. The agent could also try to gather information from the one-to-one conversation with any other agent in the game and through the public events research. And if he sees statistical outliers in the gathered data, he can put corrections in his own imagination of the social relations model. The more efforts the agent invests in this activity the more accurate his understanding of the model is.
 
-Because there is no single source of truth, agent's understanding of the social model accuracy may vary. Since of that the agents with high *Extravert* skills and *Morale* are capable to establish stable clans and play clan competition games efficiently. However, clans overall power depends on the wide range of traits and skills of it's members, so the clan assembling balance is always a challenge to the NPC agents and the human-controlled character both.
+Because there is no single source of truth, agent's understanding of the social model accuracy may vary. Since of that the agents with high *Extravert* skills and *Morale* are capable to establish stable clans and play clan competition games efficiently. However, clans overall power depends on a wide range of traits and skills of it's members, so the clan assembling balance is always a challenge to the NPC agents and the human-controlled character both.
 
 Also it's worth to be mentioned that the clan's "formal" roles in the game are not necessary correlate to the agents' actual alliance hierarchies. Members of a single clan could be members of the different projects depending on the clan's strategy. Moreover Supporter and Leader could take irrelevant roles even in a single project or in the Foundation government. The clan can promote it's members based on their actual skills and public reputation, but the secret hierarchies inside the clan.
 
@@ -89,4 +89,4 @@ The primary advantage of playing in a clan stems from cooperation effect. If the
 
 However, clan competitions have certain disadvantages too:
 1. On the clan competition level the process represents non-cooperative game. As such it may lead to the [Nash equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium) and the overall game stagnation. Nash equlibriums, however, can be broken by non systematic factors: personal scientific Breakthroughs, through the storyline events and by the player's inordinary actions.
-2. Clan's resources could be shorter than particular agent needs, so his personal grow may be slower than if he would be a loner. In practice, some highly skilled and talanted Intravert agents may be interested in playing as a loner sometimes. Nevertheless, if there is too many of such agents and no clans in the game, they will be unable to implement their goals due to disability in cooperation.
+2. Clan's resources could be shorter than particular agent needs, so his personal grow may be slower than if he would be a loner. In practice, some highly skilled and talanted *Intravert* agents may be interested in playing as a loner sometimes. Nevertheless, if there is too many of such agents and no clans in the game, they will be unable to implement their goals due to disability in cooperation.

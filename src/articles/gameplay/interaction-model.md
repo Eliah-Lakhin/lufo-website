@@ -17,7 +17,7 @@ Journal's digest used to spread public information related to projects in a form
 
 Public distributions may influence other agent's desirability to support certain initiatives based on their personal interests and traits. Positive progress towards the project completion raises project member's personal reputation in the community and the overall interest towards the project, but failures may lower these metrics. As such, agents with high Secretivity trait level tend to hide this information in the public field.
 
-Article's attention effect depends on the publisher's general reputation. The higher reputation is the more agents "read" the article and react the article.
+Article's attention effect depends on the publisher's general reputation. The higher reputation is the more agents "read" the article and react to the article.
 
 When the agent publishes an item he is able to also refer some relevant articles published previously by other agents. Depending on the publishing article effect this may raise or lower other agent's reputation slightly and boost/reduce the effect of referred article accordingly.
 
@@ -40,7 +40,7 @@ Private conversations happening between agents in a form of dialog when one agen
   - Asking to help in personal work issues.
   - Discovering other agent personal profile features through the dialog options.
   - Asking for the hidden information on the project progression.
-  - Asking for the 3rd party agent hidden profile information.
+  - Asking for the 3rd party agent hidden profile items information.
   - Asking for the other agent of his personal strategical goals and the current strategical plans.
   - Set other agent strategy plans and details.
 
@@ -50,4 +50,4 @@ The success of conversation depends on several factors:
   - Agent's general reputation.
   - Mutual interests.
 
-For NPC agents the process of one-to-one conversations are driven by the game engine. When the playable character participates in dialog with NPC agent there is a User Interface showing all social information gathered by the player in graphs, schemes and tables, and the dialog options that the player can try in conversations with the NPC agent to enrich certain items of the scheme. The success of conversation between non-playable character and player-controlled character depends on the same metrics as between two NPCs, except emotional profiles congruence check. Checking of the congruence is a mini-game when the player should pass through the logically equal dialog options that have different emotional emphasis. Choosing the right emphasis, among other factors, leads the player to success in conversation.
+For NPC agents the process of one-to-one conversations are driven by the game engine. When the playable character participates in dialog with NPC agent there is a User Interface showing all social information collected by the player in graphs, schemes and tables, and the dialog options that the player can try in conversations with the NPC agent to enrich certain items of the scheme. The success of conversation between non-playable character and player-controlled character depends on the same metrics as between two NPCs, except emotional profiles congruence check. Checking of the congruence is a mini-game when the player should pass through the logically equal dialog options that have different emotional emphasis. Choosing the right emphasis, among other factors, leads the player to success in conversation.
