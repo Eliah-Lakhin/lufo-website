@@ -10,7 +10,7 @@ Let's take an example of the Vualt City from Fallout 2:
 
 ![Vault City map](../../images/vault-city.png)
 
-After the long journey through the post-apocalyptic wasteland consists of ruines and decadent surviving tribes, it is very impressive to encounter such miraculous well-built town. And even more impressive when the player realizes that it was built using super-power futuristic technology fitting just in a small case called GECK.
+After a long journey through the post-apocalyptic wasteland consisting of ruines and decadent surviving tribes, it is very impressive to encounter such miraculous well-built town. And even more impressive when the player realizes that it was built using super-power futuristic technology fitting just in a small case called GECK.
 
 But what if the GECK wasn't completely exhausted by the Vault City citizens yet? What if they capable to keep developing the town, assembling new buildings and facilities, expanding town's territory, having continuous evolution of the community? I believe such thoughts come into mind to many players who walked through the game.
 
@@ -18,7 +18,7 @@ The later attempt towards this feature was presented in a sequel Fallout 4:
 
 ![Fallout 4 building](../../images/fallout-4.jpg)
 
-In Fallout 4 building mechanics was introduced as a mixture of Minecraft-like and tower-defense game mechanics, when the player can build a small sattlement for a local community of NPCs to defend them from raids and to grow it's trivial economics too. What's bad about this approach, aside from the fact that the building components are not aligned by a grid, is:
+In Fallout 4 building mechanics were introduced as a mixture of Minecraft-like and tower-defense game mechanics, when the player can build a small sattlement for a local community of NPCs to defend them from raids and to grow it's trivial economics too. What's bad about this approach, aside from the fact that the building components are not aligned by a grid, is:
 
 1. Contrary to Minecraft a number of components and their possible forms is limited.
 2. The player is also limited in a number of things he can rebuild inside the sattlement's borders. So the overall game world is still feeling static, and the manual build facility embeddings feel artificial too. The player is not able to reconstruct the entire game world as he does in Minecraft.

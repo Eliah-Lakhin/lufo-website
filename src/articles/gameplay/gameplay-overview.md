@@ -10,7 +10,7 @@ All elements of the map procedurally generated based on a number of a smaller pr
 
 The player is able to step into the buildings and its' rooms, interact with objects inside the buildings including electronic devices, computers, control panels, buttons, leverages, mechanisms, elevators, books, and some other small objects. He can read texts and messages found in books and devices, and keep them as notes in the UI.
 
-There is one primary map in the game where the main action taking place, and is available for exploring by the player's controlled character. The player can use vehicals to travel on the map faster. An example of such transportations could be, for example, ships to travel by water, a Spacecraft to travel to the moon and back, and the monorail train to travel on the Island's map.
+There is one primary map in the game where the main action taking place, and is available for exploring by the player's controlled character. The player can use vehicles to travel on the map faster. An example of such transportations could be, for example, ships to travel by water, a Spacecraft to travel to the moon and back, and the monorail train to travel on the Island's map.
 
 The primary game map is a tropical Island. In the beginnig of the game the Island map is already developed. The player and the commmunity of characters are keep developing and evolving it until another point of time from which they will relocate to the map of the Moon site with the different set of content to establish moon base from scratch. For details see [Plot and Setting](#plot-and-setting) section.
 
@@ -19,11 +19,11 @@ All permanent non-playable characters in the game are completely independent and
 The overlall number of the non-playable characters actively simualted by the primary game AI is around a hundred of units. But the game engine also simulates more units that reveals on the map temporary from time to time, and not available for interaction. They perform direct predefined scenario driven actions only or is a part of the environment. Example of such units are robots, animals, the temporary visitors of the Island and the storyline characters.
 
 The list of base actions that simulated NPCs can do are:
- - Walking to specific place on the map by foot, using vehicals or any other transportations.
+ - Walking to specific place on the map by foot, using vehicles or any other transportations.
  - Getting an object to be delivered to another place.
  - Applying the object to the target place, facility or giving it to another agent.
  - Getting a construction device.
- - Working with specific facility. This includes assembling devices, vehicals, mechanisms. Also taking part in construction of the building, working on researches in labs etc.
+ - Working with specific facility. This includes assembling devices, vehicles, mechanisms. Also taking part in construction of the building, working on researches in labs etc.
  - Initiating conversation session with another agent to set or recieve directs, and to gether or to provide information.
  - Performing an everyday and regular objectives such as sleep, rest, recreation, medical examinations, etc.
 
