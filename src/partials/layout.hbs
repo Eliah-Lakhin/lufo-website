@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{title}}</title>
-    {{#each meta}}
-      <meta name="{{@key}}" content="{{this}}" />
-    {{/each}}
-    <meta property="og:locale" content="{{og.locale}}" />
-    <meta property="og:type" content="{{og.type}}" />
-    <meta property="og:title" content="{{og.title}}" />
-    <meta property="og:description" content="{{og.description}}" />
-    <meta property="og:url" content="{{og.url}}" />
-    <meta property="og:image" content="{{og.image}}" />
-    {{#if production}}
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ga}}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '{{ga}}');
-      </script>
-    {{/if}}
-  </head>
+{{#> empty}}
   <body class="bg-lufo-body font-regular">
     {{> header}}
     <div class="container mx-auto bg-gray-900 mt-6 mb-6">
@@ -31,4 +6,4 @@
     </div>
     {{> footer}}
   </body>
-</html>
+{{/empty}}

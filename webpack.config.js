@@ -20,7 +20,8 @@ module.exports = {
   mode,
 
   entry: {
-    lufo: Path.resolve(__dirname, 'src', 'index.js'),
+    index: Path.resolve(__dirname, 'src', 'scripts', 'index.js'),
+    slides: Path.resolve(__dirname, 'src', 'scripts', 'slides.js'),
   },
 
   output: {
@@ -167,6 +168,25 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'file-loader',
       },
@@ -187,28 +207,50 @@ module.exports = {
       chunkFilename: '[id].css',
       ignoreOrder: false,
     }),
-    ..._(fs.readdirSync(Path.resolve(__dirname, 'src', 'pages')))
-      .map(
-        (filename) => {
-          const parsed = filename.split('.');
+    ...(() => {
+      function parseDir(path) {
+        let chunk = path
+          .replace(/\.[\/]/g, '')
+          .replace(/\\|\//g, '-');
 
-          if (parsed.length <= 1) {
-            return null;
-          }
-
-          return new HtmlWebpackPlugin({
-            filename: parsed[0] === 'index' ? 'index.html' : `${parsed[0]}/index.html`,
-            template: `src/pages/${filename}`,
-            templateParameters: {
-              ...config,
-              production: production,
-              development: !production
-            },
-          });
+        if (chunk === '.') {
+          chunk = 'index';
         }
-      )
-      .compact()
-      .value()
+
+        return _(fs.readdirSync(Path.resolve(__dirname, 'src', 'pages', path)))
+        .map(
+          (filename) => {
+            const parsed = filename.split('.');
+
+            if (parsed.length === 0) {
+              return null;
+            }
+
+            if (parsed.length === 1) {
+              return parseDir(`${path}/${parsed[0]}`);
+            }
+
+            return [new HtmlWebpackPlugin({
+              filename: parsed[0] === 'index'
+                ? `${path}/index.html`
+                : `${path}/${parsed[0]}/index.html`,
+              template: `src/pages/${path}/${filename}`,
+              templateParameters: {
+                ...config,
+                production: production,
+                development: !production,
+              },
+              chunks: [chunk]
+            })];
+          }
+        )
+        .compact()
+        .flatten()
+        .value();
+      }
+
+      return parseDir('.');
+    })()
   ],
 
   optimization: {

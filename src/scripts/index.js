@@ -1,4 +1,4 @@
-import './styles/index.scss';
+import '../styles/index.scss';
 
 import Gumshoe from 'gumshoejs';
 import SmoothScroll from 'smooth-scroll';
@@ -11,7 +11,7 @@ new Gumshoe('nav a', {
 
 new SmoothScroll('a[href*="#"]', {
   speed: 500,
-	speedAsDuration: true,
+  speedAsDuration: true,
 });
 
 stickybits('nav', {
