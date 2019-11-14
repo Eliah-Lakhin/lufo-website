@@ -1,0 +1,35 @@
+.reveal .slides section {
+  .slide-title {
+    @apply text-green-500 text-3xl;
+  }
+
+  .slide-subtitle {
+    @apply text-xl;
+  }
+
+  img {
+    @apply bg-transparent border-0 shadow-none inline;
+  }
+
+  .logo {
+    @apply text-center;
+
+    img {
+      @apply m-0;
+    }
+  }
+
+  .image-set img {
+    @apply max-w-xs;
+  }
+
+  .illustration img {
+    @apply max-w-lg;
+    max-height: 40rem;
+  }
+
+  .illustration-big img {
+    @apply max-w-4xl;
+    max-height: 60rem;
+  }
+}

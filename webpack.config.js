@@ -46,7 +46,7 @@ module.exports = {
             options: {
               helperDirs: Path.resolve(__dirname, 'src', 'helpers'),
               partialDirs: Path.resolve(__dirname, 'src', 'partials'),
-              inlineRequires: /\.md$/,
+              inlineRequires: /\.(md|png|jpe?g|gif|svg)$/,
             },
           },
         ],
