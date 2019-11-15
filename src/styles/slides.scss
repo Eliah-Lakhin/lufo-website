@@ -1,11 +1,49 @@
-.reveal.slide {
+.reveal.convex {
+  background: url(../images/slides/space-bg.jpg) !important;
+
   .slides section {
+    &.key-slide {
+      @apply bg-lufo-body;
+    }
+
+    a {
+      @apply font-bold;
+    }
+
+    table {
+      @apply bg-lufo-body;
+
+      td, th {
+        @apply p-10;
+      }
+
+      &.table {
+        @apply rounded-lg;
+
+        th {
+          @apply text-orange-600;
+        }
+
+        td:first-child {
+          @apply text-green-600;
+        }
+
+        td, th {
+          @apply px-8 py-4 border-0;
+
+          &:first-child {
+            min-width: 18rem;
+          }
+        }
+      }
+    }
+
     .slide-title {
-      @apply text-green-500 text-3xl;
+      @apply text-green-500 text-6xl mb-16;
     }
 
     .slide-subtitle {
-      @apply text-xl;
+      @apply text-4xl;
     }
 
     img {
@@ -16,12 +54,18 @@
       @apply text-center;
 
       img {
-        @apply m-0;
+        @apply m-0 max-w-lg;
       }
     }
 
-    .image-set img {
-      @apply max-w-xs;
+    .image-set-1 img {
+      @apply mx-4;
+      max-height: 25rem;
+    }
+
+    .image-set-2 img {
+      @apply mx-4;
+      max-height: 15rem;
     }
 
     .illustration img {
@@ -32,6 +76,10 @@
     .illustration-big img {
       @apply max-w-4xl;
       max-height: 60rem;
+    }
+
+    .illustration-max img {
+      min-width: 60rem;
     }
   }
   
