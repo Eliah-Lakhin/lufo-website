@@ -2,6 +2,12 @@
   background: url(../images/slides/space-bg.jpg) !important;
 
   .slides section {
+    .main-title {
+      font-size: 8rem;
+      text-transform: none !important;
+      color: #fff;
+    }
+
     &.key-slide {
       @apply bg-lufo-body;
     }
