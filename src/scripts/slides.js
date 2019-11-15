@@ -7,4 +7,5 @@ import Reveal from 'reveal.js';
 Reveal.initialize({
   hash: true,
   history: true,
+  slideNumber: true,
 });
