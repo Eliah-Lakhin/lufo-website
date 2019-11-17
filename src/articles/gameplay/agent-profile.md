@@ -36,7 +36,7 @@ There are several professions required to complete the project. The exact set of
 
 ### Emotional Profile
 
-This set of discrete relay traits represents the emotional nuances of speech and behavior in communicating with other agents. They affect the agent's communication capabilities only and don't affect any functional aspects. The more emotional traits match between two agents the more chance they come into an arrangement in conversation. In other words, the agents with closer Emotional Profiles tend to understand better each other by default. Also, the agent can slowly learn other agents emotional traits he speaks to, and as such he can adjust his way of communication individually to grow his influence.
+This set of discrete relay traits represents the emotional nuances of speech and behavior in communicating with other agents. They affect the agent's communication capabilities only and don't affect any functional aspects. The more emotional traits match between two agents the more chance they come into an arrangement in conversation. In other words, the agents with closer Emotional Profiles tend to understand better each other by default. Also, the agent can slowly learn other agents' emotional traits he speaks to, and as such he can adjust his way of communication individually to grow his influence.
 
   - Politeness / Rudeness
   - Optimistic / Pessimistic
