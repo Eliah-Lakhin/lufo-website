@@ -1,4 +1,4 @@
-import '../styles/index.scss';
+import '../styles/index/index.scss';
 
 import Gumshoe from 'gumshoejs';
 import SmoothScroll from 'smooth-scroll';

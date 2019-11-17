@@ -1,0 +1,23 @@
+.lufo-page-header {
+  @apply border-b border-gray-800 p-6;
+
+  h1 {
+    @apply text-lufo-title text-4xl font-title text-center;
+  }
+
+  ul {
+    @apply text-center;
+
+    li {
+      @apply text-gray-600 mt-4 mx-4 text-sm font-item text-center inline-block;
+
+      a {
+        @apply py-1 px-2 underline;
+      }
+
+      &.active a, &:hover a {
+        @apply bg-gray-600 text-lufo-body no-underline;
+      }
+    }
+  }
+}

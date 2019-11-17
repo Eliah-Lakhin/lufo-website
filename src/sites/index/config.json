@@ -1,0 +1,19 @@
+{
+  "menu": [
+    {
+      "name": "index",
+      "title": "Game Design Document",
+      "url": "/"
+    },
+    {
+      "name": "blog",
+      "title": "Web Log",
+      "url": "/blog/"
+    },
+    {
+      "name": "contacts",
+      "title": "Contacts",
+      "url": "/contacts/"
+    }
+  ]
+}

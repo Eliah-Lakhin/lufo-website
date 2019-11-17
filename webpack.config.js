@@ -11,7 +11,7 @@ const Viz = require('viz.js')
 const vizRenderer = require('viz.js/full.render.js');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-const config = require('./config.json');
+const config = require('./src/sites/config.json');
 
 const mode = process.env.NODE_ENV;
 const production = mode === 'production';
@@ -19,13 +19,27 @@ const production = mode === 'production';
 module.exports = {
   mode,
 
-  entry: {
-    index: Path.resolve(__dirname, 'src', 'scripts', 'index.js'),
-    slides: Path.resolve(__dirname, 'src', 'scripts', 'slides.js'),
-  },
+  entry: _(fs.readdirSync(Path.resolve(__dirname, 'src', 'scripts')))
+    .map((filename) => {
+      const parsed = filename.split('.');
+
+      return {
+        chunkName: parsed[0],
+        filename: Path.resolve(__dirname, 'src', 'scripts', filename)
+      };
+    })
+    .reduce(
+      (result, pair) => {
+        result[pair.chunkName] = pair.filename;
+
+        return result;
+      },
+      {}
+    ),
 
   output: {
     path: Path.resolve(__dirname, 'docs'),
+    publicPath: '/',
     filename: '[name].[hash].js',
   },
 
@@ -180,7 +194,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: '[name].[hash].[ext]',
               outputPath: 'fonts/',
             },
           },
@@ -189,6 +203,10 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'file-loader',
+        options: {
+          name: '[name].[hash].[ext]',
+          outputPath: 'images/',
+        },
       },
     ],
   },
@@ -207,50 +225,61 @@ module.exports = {
       chunkFilename: '[id].css',
       ignoreOrder: false,
     }),
-    ...(() => {
-      function parseDir(path) {
-        let chunk = path
-          .replace(/\.[\/]/g, '')
-          .replace(/\\|\//g, '-');
-
-        if (chunk === '.') {
-          chunk = 'index';
+    ..._(fs.readdirSync(Path.resolve(__dirname, 'src', 'sites')))
+      .map((siteName) => {
+        if (siteName === 'config.json') {
+          return null;
         }
 
-        return _(fs.readdirSync(Path.resolve(__dirname, 'src', 'pages', path)))
-        .map(
-          (filename) => {
-            const parsed = filename.split('.');
+        const pageConfig = {
+          ...config,
+          ...JSON.parse(fs.readFileSync(Path.resolve(__dirname, 'src', 'sites', siteName, 'config.json'))),
+        };
 
-            if (parsed.length === 0) {
-              return null;
-            }
+        const parseDir = (path) =>
+          _(fs.readdirSync(Path.resolve(__dirname, 'src', 'sites', path)))
+            .map(
+              (filename) => {
+                const parsed = filename.split('.');
+    
+                if (parsed.length === 0) {
+                  return null;
+                }
+    
+                if (parsed.length === 1) {
+                  return parseDir(`${path}/${parsed[0]}`);
+                }
 
-            if (parsed.length === 1) {
-              return parseDir(`${path}/${parsed[0]}`);
-            }
-
-            return [new HtmlWebpackPlugin({
-              filename: parsed[0] === 'index'
-                ? `${path}/index.html`
-                : `${path}/${parsed[0]}/index.html`,
-              template: `src/pages/${path}/${filename}`,
-              templateParameters: {
-                ...config,
-                production: production,
-                development: !production,
-              },
-              chunks: [chunk]
-            })];
-          }
-        )
-        .compact()
-        .flatten()
-        .value();
-      }
-
-      return parseDir('.');
-    })()
+                if (parsed[1] !== 'hbs') {
+                  return null;
+                }
+    
+                return [new HtmlWebpackPlugin({
+                  filename: `${path}/${parsed[0]}/index.html`
+                    .replace(/index\//g, ''),
+                  template: `src/sites/${path}/${filename}`,
+                  templateParameters: {
+                    ...pageConfig,
+                    menu: _.map(pageConfig.menu || [], (item) => ({
+                      ...item,
+                      active: item.name === parsed[0]
+                    })),
+                    production: production,
+                    development: !production,
+                  },
+                  chunks: [siteName]
+                })];
+              }
+            )
+            .compact()
+            .flatten()
+            .value();
+            
+        return parseDir(siteName);
+      })
+      .compact()
+      .flatten()
+      .value(),
   ],
 
   optimization: {

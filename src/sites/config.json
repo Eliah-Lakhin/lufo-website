@@ -1,8 +1,8 @@
 {
-  "title": "Lunar Foundation - Sci-Fi RPG",
+  "title": "Lunar Foundation - Sci-Fi Conspiracy Game",
   "ga": "UA-151197068-1",
   "meta": {
-    "description": "Science Fiction Role-Playing Game",
+    "description": "Science Fiction Conspiracy Game",
     "author": "Ilya Lakhin",
     "keywords": "game,moon,conspiracy,science,rpg,simulation,moon base,space,research,sci-fi,scifi,science finction,rust,rust-lang"
   },
@@ -10,7 +10,7 @@
     "locale": "en_US",
     "type": "game",
     "title": "Lunar Foundation",
-    "description": "Science Fiction Role-Playing Game",
+    "description": "Science Fiction Conspiracy Game",
     "url": "https://www.lunar-foundation.com/",
     "image": "https://www.lunar-foundation.com/og.png"
   }
